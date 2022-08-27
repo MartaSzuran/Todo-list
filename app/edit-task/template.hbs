@@ -5,20 +5,30 @@
     <input
       type='description'
       class='form-control'
-      id='exampleInputEmail1'
-      aria-describedby='emailHelp'
+      id='description'
+      aria-describedby='description'
       value={{this.model.description}}
       {{on 'input' (fn this.onPropertyChange 'description')}}
     />
   </div>
   <div class='mb-3 form-check'>
-    <input
-      type='checkbox'
-      class='form-check-input'
-      id='exampleCheck1'
-      {{on 'click' this.toggleIsDone}}
-    />
-    <label class='form-check-label' for='exampleCheck1'>Is done?</label>
+    {{#if this.model.isDone}}
+      <input
+        type='checkbox'
+        class='form-check-input'
+        id='checkbox'
+        {{on 'click' this.toggleIsDone}}
+        checked
+      />
+    {{else}}
+      <input
+        type='checkbox'
+        class='form-check-input'
+        id='checkbox'
+        {{on 'click' this.toggleIsDone}}
+      />
+    {{/if}}
+    <label class='form-check-label' for='checkbox'>Is done?</label>
   </div>
   <button
     type='submit'

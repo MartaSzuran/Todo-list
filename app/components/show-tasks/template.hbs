@@ -12,7 +12,30 @@
         <td>{{task.id}}</td>
         <td>{{task.description}}</td>
         <td>{{moment-format task.createdAt 'DD-MM-YYYY'}}</td>
-        <td>{{task.isDone}}</td>
+        <td>
+          {{#if task.isDone}}
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value={{task.isDone}}
+                id='checkbox'
+                checked
+                disabled
+              />
+            </div>
+          {{else}}
+            <div class='form-check'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value={{task.isDone}}
+                id='checkbox'
+                disabled
+              />
+            </div>
+          {{/if}}
+        </td>
         <ShowTasks::EditDeleteButton @currentTask={{task}} />
       </tr>
     {{/each}}

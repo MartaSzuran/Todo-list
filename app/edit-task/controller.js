@@ -13,6 +13,10 @@ export default class HomePageController extends Controller {
 
   @action
   toggleIsDone() {
+    if (this.model.isDone) {
+      this.model.isDone = false;
+      return;
+    }
     this.model.isDone = true;
   }
 
