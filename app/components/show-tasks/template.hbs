@@ -11,7 +11,7 @@
       <tr>
         <td>{{task.id}}</td>
         <td>{{task.description}}</td>
-        <td>{{format-date task.createdAt}}</td>
+        <td>{{moment-format task.createdAt 'DD-MM-YYYY'}}</td>
         <td>{{task.isDone}}</td>
         <ShowTasks::EditDeleteButton @currentTask={{task}} />
       </tr>
