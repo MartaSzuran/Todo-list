@@ -14,15 +14,14 @@ export default class ShowTasksComponent extends Component {
   @action
   onDescriptionChange({ target: { value } }) {
     this.newTaskDescription = value;
-    console.log(this.newTaskDescription);
   }
 
   @action
   async addNewTask() {
+    this.args.checkShowAddInput(false);
     const task = { description: this.newTaskDescription };
     await this.store.createRecord('task', task);
     await this.args.tasks.save();
-    this.args.checkShowAddInput(false);
     this.clear();
   }
 
