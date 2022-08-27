@@ -6,8 +6,9 @@ import { tracked } from '@glimmer/tracking';
 export default class HomePageController extends Controller {
   @service store;
   @service router;
+
   @tracked isShowAddInput = false;
-  @tracked status;
+  @tracked status = 'all';
 
   queryParams = ['status'];
 
@@ -25,7 +26,7 @@ export default class HomePageController extends Controller {
 
   @action
   onAllChoose() {
-    this.status = '';
+    this.status = 'all';
     this.router.transitionTo('/', this.status);
   }
 
