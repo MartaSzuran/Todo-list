@@ -1,0 +1,23 @@
+{{#if this.isShowAddInput}}
+  <div class='mb-3'>
+    <label>Description</label>
+    <input
+      type='description'
+      class='form-control'
+      id='description'
+      aria-describedby='description'
+      value={{this.newTaskDescription}}
+      {{on 'input' this.onDescriptionChange}}
+    />
+  </div>
+  <button
+    type='submit'
+    class='btn btn-primary'
+    {{on 'click' this.addNewTask}}
+  >Submit</button>
+  <button
+    type='submit'
+    class='btn btn-danger'
+    {{on 'click' this.onCancel}}
+  >Cancel</button>
+{{/if}}

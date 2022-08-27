@@ -1,2 +1,10 @@
 <MainContainer />
 <ShowTasks @tasks={{this.model}} />
+<button type='button' class='btn btn-info' {{on 'click' this.showAddInput}}>
+  Add new task
+</button>
+<AddTask
+  @isShowAddInput={{this.isShowAddInput}}
+  @checkShowAddInput={{this.checkShowAddInput}}
+  @tasks={{this.model}}
+/>
