@@ -1,6 +1,7 @@
 <table class='table'>
   <thead>
     <tr>
+      <th scope='col'>ID</th>
       <th scope='col'>Description</th>
       <th scope='col'>Date</th>
     </tr>
@@ -10,7 +11,7 @@
       <tr>
         <td>{{task.id}}</td>
         <td>{{task.description}}</td>
-        <td>{{task.createdAt}}</td>
+        <td>{{format-date task.createdAt}}</td>
         <ShowTasks::EditDeleteButton @currentTask={{task}} />
       </tr>
     {{/each}}
