@@ -8,8 +8,10 @@
   <tbody>
     {{#each @tasks as |task|}}
       <tr>
+        <td>{{task.id}}</td>
         <td>{{task.description}}</td>
         <td>{{task.createdAt}}</td>
+        <ShowTasks::EditDeleteButton @currentTask={{task}} />
       </tr>
     {{/each}}
   </tbody>

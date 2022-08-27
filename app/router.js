@@ -8,4 +8,5 @@ export default class Router extends EmberRouter {
 
 Router.map(function () {
   this.route('home-page', { path: '/' });
+  this.route('edit-task', { path: 'edit-task/:id' });
 });
