@@ -5,7 +5,29 @@ import { tracked } from '@glimmer/tracking';
 
 export default class HomePageController extends Controller {
   @service store;
+  @service router;
   @tracked isShowAddInput = false;
+  @tracked status;
+
+  queryParams = ['status'];
+
+  @action
+  onActiveChoose() {
+    this.status = 'active';
+    this.router.transitionTo('/', this.status);
+  }
+
+  @action
+  onCompletedChoose() {
+    this.status = 'completed';
+    this.router.transitionTo('/', this.status);
+  }
+
+  @action
+  onAllChoose() {
+    this.status = '';
+    this.router.transitionTo('/', this.status);
+  }
 
   @action
   checkShowAddInput(params) {
