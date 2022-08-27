@@ -12,6 +12,7 @@
         <td>{{task.id}}</td>
         <td>{{task.description}}</td>
         <td>{{format-date task.createdAt}}</td>
+        <td>{{task.isDone}}</td>
         <ShowTasks::EditDeleteButton @currentTask={{task}} />
       </tr>
     {{/each}}

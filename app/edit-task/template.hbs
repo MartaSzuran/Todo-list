@@ -1,0 +1,33 @@
+<MainContainer />
+<form class='edit-task'>
+  <div class='mb-3'>
+    <label class='form-label'>Description</label>
+    <input
+      type='description'
+      class='form-control'
+      id='exampleInputEmail1'
+      aria-describedby='emailHelp'
+      value={{this.model.description}}
+      {{on 'input' (fn this.onPropertyChange 'description')}}
+    />
+  </div>
+  <div class='mb-3 form-check'>
+    <input
+      type='checkbox'
+      class='form-check-input'
+      id='exampleCheck1'
+      {{on 'click' this.toggleIsDone}}
+    />
+    <label class='form-check-label' for='exampleCheck1'>Is done?</label>
+  </div>
+  <button
+    type='submit'
+    class='btn btn-primary'
+    {{on 'click' this.onSubmit}}
+  >Submit</button>
+  <button
+    type='submit'
+    class='btn btn-danger'
+    {{on 'click' this.onCancel}}
+  >Cancel</button>
+</form>
