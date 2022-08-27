@@ -1,0 +1,16 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th scope='col'>Description</th>
+      <th scope='col'>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @tasks as |task index|}}
+      <tr>
+        <td>{{task.description}}</td>
+        <td>{{task.createdAt}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

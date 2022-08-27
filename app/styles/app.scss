@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import 'table';
 
 body {
   min-width: fit-content;
@@ -6,4 +7,6 @@ body {
 
 .main-container {
   background-color: beige;
+  margin-left: 10px;
+  margin-right: 10px;
 }
