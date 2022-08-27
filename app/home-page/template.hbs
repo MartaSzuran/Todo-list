@@ -1,6 +1,2 @@
 <MainContainer />
-<ul>
-  {{#each @model as |task|}}
-    <li>{{task.description}}</li>
-  {{/each}}
-</ul>
+<ShowTasks @tasks={{this.model}} />
