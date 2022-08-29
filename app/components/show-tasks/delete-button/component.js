@@ -10,11 +10,6 @@ export default class ShowTasksComponent extends Component {
   }
 
   @action
-  transitionToTaskPage() {
-    this.router.transitionTo('edit-task', this.currentTask.id);
-  }
-
-  @action
   onDelete() {
     this.currentTask.destroyRecord();
   }

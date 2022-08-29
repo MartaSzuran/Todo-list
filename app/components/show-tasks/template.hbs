@@ -1,42 +1,44 @@
 <table class='table'>
-  <thead>
-    <tr>
-      <th scope='col'>ID</th>
-      <th scope='col'>Description</th>
-      <th scope='col'>Date</th>
-    </tr>
-  </thead>
   <tbody>
-    {{#each @tasks as |task|}}
+    {{#each @tasks as |task index|}}
       <tr>
-        <td>{{task.id}}</td>
-        <td>{{task.description}}</td>
-        <td>{{moment-format task.createdAt 'DD-MM-YYYY'}}</td>
-        <td>
+        <div class='input-group mb-3'>
           {{#if task.isDone}}
-            <div class='form-check'>
+            <div class='input-group-text'>
               <input
-                class='form-check-input'
+                class='form-check-input mt-0'
                 type='checkbox'
                 value={{task.isDone}}
-                id='checkbox'
+                aria-label='Checkbox for following text input'
+                {{on 'click' (fn this.getcurrentTask task)}}
+                {{on 'click' (fn this.onPropertyChange 'isDone')}}
                 checked
-                disabled
               />
             </div>
           {{else}}
-            <div class='form-check'>
+            <div class='input-group-text'>
               <input
-                class='form-check-input'
+                class='form-check-input mt-0'
                 type='checkbox'
                 value={{task.isDone}}
-                id='checkbox'
-                disabled
+                aria-label='Checkbox for following text input'
+                {{on 'click' (fn this.getcurrentTask task)}}
+                {{on 'click' (fn this.onPropertyChange 'isDone')}}
               />
             </div>
           {{/if}}
-        </td>
-        <ShowTasks::EditDeleteButton @currentTask={{task}} />
+          <form>
+            <input
+              type='text'
+              class='form-control'
+              aria-label='Text input with checkbox'
+              value={{task.description}}
+              {{on 'input' (fn this.getcurrentTask task)}}
+              {{on 'input' (fn this.onPropertyChange 'description')}}
+            />
+          </form>
+          <ShowTasks::DeleteButton @currentTask={{task}} />
+        </div>
       </tr>
     {{/each}}
   </tbody>
