@@ -11,6 +11,7 @@
                 value={{task.isDone}}
                 aria-label='Checkbox for following text input'
                 {{on 'click' (fn this.getcurrentTask task)}}
+                {{on-key 'Tab'}}
                 {{on 'click' (fn this.onPropertyChange 'isDone')}}
                 checked
               />
@@ -23,20 +24,21 @@
                 value={{task.isDone}}
                 aria-label='Checkbox for following text input'
                 {{on 'click' (fn this.getcurrentTask task)}}
+                {{on-key 'Tab'}}
                 {{on 'click' (fn this.onPropertyChange 'isDone')}}
               />
             </div>
           {{/if}}
-          <form>
-            <input
-              type='text'
-              class='form-control'
-              aria-label='Text input with checkbox'
-              value={{task.description}}
-              {{on 'input' (fn this.getcurrentTask task)}}
-              {{on 'input' (fn this.onPropertyChange 'description')}}
-            />
-          </form>
+          <input
+            type='text'
+            class='form-control'
+            aria-label='description'
+            value={{task.description}}
+            {{on 'click' (fn this.getcurrentTask task)}}
+            {{on-key 'Tab'}}
+            {{on 'input' (fn this.onPropertyChange 'description')}}
+            {{on-key 'Enter' (fn this.onSave 'description')}}
+          />
           <ShowTasks::DeleteButton @currentTask={{task}} />
         </div>
       </tr>

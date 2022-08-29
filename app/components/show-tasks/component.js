@@ -1,28 +1,38 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class ShowTasksComponent extends Component {
   @service store;
-  @tracked currentTaskID;
 
   @action
   getcurrentTask(task) {
     this.currentTask = task;
+    console.log(this.currentTask.id);
   }
 
   @action
   onPropertyChange(propName, { target: { value } }) {
     this.currentTask[propName] = value;
     if (propName === 'isDone') {
-      if (this.currentTask.isDone === 'true') {
-        this.currentTask.isDone = 'false';
+      if (value === 'true') {
+        this.store
+          .findRecord('task', this.currentTask.id)
+          .then(function (task) {
+            task[propName] = false;
+            task.save();
+          });
         return;
       }
-      this.currentTask.isDone = 'true';
+      this.store.findRecord('task', this.currentTask.id).then(function (task) {
+        task[propName] = true;
+        task.save();
+      });
     }
+  }
 
+  @action
+  onSave(propName, { target: { value } }) {
     if (this.currentTask.hasDirtyAttributes) {
       this.store.findRecord('task', this.currentTask.id).then(function (task) {
         task[propName] = value;
