@@ -1,0 +1,35 @@
+{{#if @currentTask.isDone}}
+  <div class='input-group-text'>
+    <input
+      class='form-check-input mt-0'
+      type='checkbox'
+      value={{@currentTask.isDone}}
+      aria-label='Checkbox for following text input'
+      {{on-key 'Enter' (fn this.onPropertyChange 'isDone')}}
+      {{on 'click' (fn this.onPropertyChange 'isDone')}}
+      checked
+    />
+  </div>
+{{else}}
+  <div class='input-group-text'>
+    <input
+      class='form-check-input mt-0'
+      type='checkbox'
+      value={{@currentTask.isDone}}
+      aria-label='Checkbox for following text input'
+      {{on-key 'Enter' (fn this.onPropertyChange 'isDone')}}
+      {{on 'click' (fn this.onPropertyChange 'isDone')}}
+    />
+  </div>
+{{/if}}
+<div class='input-group mb-3'>
+  <input
+    type='text'
+    class='form-control'
+    aria-label='description'
+    value={{@currentTask.description}}
+    {{on 'input' (fn this.onPropertyChange 'description')}}
+    {{on-key 'Enter' (fn this.onSave 'description')}}
+  />
+  <ShowTasks::Details::DeleteButton @currentTask={{@currentTask}} />
+</div>

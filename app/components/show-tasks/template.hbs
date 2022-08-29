@@ -1,46 +1,8 @@
 <table class='table'>
   <tbody>
-    {{#each @tasks as |task index|}}
+    {{#each @tasks as |task|}}
       <tr>
-        <div class='input-group mb-3'>
-          {{#if task.isDone}}
-            <div class='input-group-text'>
-              <input
-                class='form-check-input mt-0'
-                type='checkbox'
-                value={{task.isDone}}
-                aria-label='Checkbox for following text input'
-                {{on 'click' (fn this.getcurrentTask task)}}
-                {{on-key 'Tab'}}
-                {{on 'click' (fn this.onPropertyChange 'isDone')}}
-                checked
-              />
-            </div>
-          {{else}}
-            <div class='input-group-text'>
-              <input
-                class='form-check-input mt-0'
-                type='checkbox'
-                value={{task.isDone}}
-                aria-label='Checkbox for following text input'
-                {{on 'click' (fn this.getcurrentTask task)}}
-                {{on-key 'Tab'}}
-                {{on 'click' (fn this.onPropertyChange 'isDone')}}
-              />
-            </div>
-          {{/if}}
-          <input
-            type='text'
-            class='form-control'
-            aria-label='description'
-            value={{task.description}}
-            {{on 'click' (fn this.getcurrentTask task)}}
-            {{on-key 'Tab'}}
-            {{on 'input' (fn this.onPropertyChange 'description')}}
-            {{on-key 'Enter' (fn this.onSave 'description')}}
-          />
-          <ShowTasks::DeleteButton @currentTask={{task}} />
-        </div>
+        <ShowTasks::Details @currentTask={{task}} />
       </tr>
     {{/each}}
   </tbody>
