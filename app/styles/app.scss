@@ -3,21 +3,33 @@
 
 body {
   min-width: fit-content;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  background-image: url("/assets/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main-container {
-  background-color: beige;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  width: 94%;
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
 }
 
-.edit-task {
-  width: 50%;
+.main-header {
+  text-align: center;
   margin: auto;
+  width: 24%;
+  font-size: 50px;
+  font-weight: bold;
+  color: #818181;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
+  -webkit-transition: color 1s;
+  transition: color 1s;
 }
 
-.btn.btn-info {
-  width: 98%;
-  margin: auto;
+.main-header:hover {
+  color: #302c44;
 }
