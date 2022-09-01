@@ -1,0 +1,10 @@
+<Shared::Switch
+  @label='Active'
+  {{on 'click' this.onActiveChoose}}
+  @checked={{is-both-switches-on this.ifActiveIsChosen this.isBothON}}
+/>
+<Shared::Switch
+  @label='Completed'
+  {{on 'click' this.onCompletedChoose}}
+  @checked={{is-both-switches-on this.ifCompletedIsChosen this.isBothON}}
+/>

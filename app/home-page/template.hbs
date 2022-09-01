@@ -1,19 +1,5 @@
 <MainContainer />
-<button
-  type='submit'
-  class='btn btn-danger'
-  {{on 'click' this.onActiveChoose}}
->Active</button>
-<button
-  type='submit'
-  class='btn btn-danger'
-  {{on 'click' this.onCompletedChoose}}
->Completed</button>
-<button
-  type='submit'
-  class='btn btn-danger'
-  {{on 'click' this.onAllChoose}}
->All</button>
+<ToggleListContent @onStatusChange={{this.onStatusChange}} />
 <ShowTasks @tasks={{this.model}} />
 <button type='button' class='btn btn-info' {{on 'click' this.showAddInput}}>
   Add new task

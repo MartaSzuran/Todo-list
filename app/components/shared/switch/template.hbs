@@ -4,6 +4,7 @@
     type='checkbox'
     id='switch'
     {{on 'click' this.onClick}}
+    checked={{this.isSwitchON}}
     ...attributes
   />
   <label class='form-check-label' for='switch'>{{@label}}</label>
