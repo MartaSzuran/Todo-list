@@ -1,39 +1,38 @@
 <div class='mb-1'>
-  <div class='input-group-text'>
-    {{#if @currentTask.isDone}}
-      <div class='input-group-checkbox'>
+  <form>
+    <div class='input-group-text'>
+      {{#if @currentTask.isDone}}
+        <div class='input-group-checkbox'>
+          <input
+            class='form-check-input mt-0.5 me-2'
+            type='checkbox'
+            value={{@currentTask.isDone}}
+            aria-label='Checkbox for following text input'
+            {{on 'click' this.onIsDoneChange}}
+            checked
+          />
+        </div>
+      {{else}}
+        <div class='input-group-checkbox'>
+          <input
+            class='form-check-input mt-0.5 me-2'
+            type='checkbox'
+            value={{@currentTask.isDone}}
+            aria-label='Checkbox for following text input'
+            {{on 'click' this.onIsDoneChange}}
+          />
+        </div>
+      {{/if}}
+      <div class='input-group mt-0'>
         <input
-          class='form-check-input mt-0.5 me-2'
-          type='checkbox'
-          value={{@currentTask.isDone}}
-          aria-label='Checkbox for following text input'
-          {{on-key 'Enter' (fn this.onPropertyChange 'isDone')}}
-          {{on 'click' (fn this.onPropertyChange 'isDone')}}
-          checked
+          type='text'
+          class='form-control'
+          aria-label='description'
+          value={{@currentTask.description}}
+          {{on 'input' this.onDescriptionChange}}
         />
+        <ShowTasks::Details::DeleteButton @currentTask={{@currentTask}} />
       </div>
-    {{else}}
-      <div class='input-group-checkbox'>
-        <input
-          class='form-check-input mt-0.5 me-2'
-          type='checkbox'
-          value={{@currentTask.isDone}}
-          aria-label='Checkbox for following text input'
-          {{on-key 'Enter' (fn this.onPropertyChange 'isDone')}}
-          {{on 'click' (fn this.onPropertyChange 'isDone')}}
-        />
-      </div>
-    {{/if}}
-    <div class='input-group mt-0'>
-      <input
-        type='text'
-        class='form-control'
-        aria-label='description'
-        value={{@currentTask.description}}
-        {{on 'input' (fn this.onPropertyChange 'description')}}
-        {{on-key 'Enter' (fn this.onSave 'description')}}
-      />
-      <ShowTasks::Details::DeleteButton @currentTask={{@currentTask}} />
     </div>
-  </div>
+  </form>
 </div>
