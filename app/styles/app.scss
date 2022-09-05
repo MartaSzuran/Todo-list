@@ -3,12 +3,10 @@
 
 body {
   min-width: fit-content;
+  height: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  background-image: url("/assets/images/background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(0.25turn, #59aed3, #b5c3aa, #f1e750);
 }
 
 .main-container {
@@ -38,4 +36,19 @@ body {
   display: inline-block;
   margin-left: 50px;
   margin-bottom: 20px;
+}
+
+.new-task-input {
+  width: 92%;
+  margin: auto;
+  text-align: center;
+}
+
+.add-task-button {
+  min-width: fit-content;
+  margin: 15px 50px 15px 50px;
+}
+
+.add-task-validation-buttons {
+  margin: 15px 50px 15px 50px;
 }
