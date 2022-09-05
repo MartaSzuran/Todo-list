@@ -30,6 +30,7 @@ export default class HomePageController extends Controller {
   showAddInput() {
     if (this.isShowAddInput) {
       this.isShowAddInput = false;
+      return;
     }
     this.isShowAddInput = true;
   }
