@@ -19,10 +19,12 @@ export default class ShowTasksComponent extends Component {
   @action
   async addNewTask() {
     this.args.checkShowAddInput(false);
-    const task = { description: this.newTaskDescription };
-    const newTask = await this.store.createRecord('task', task);
-    await newTask.save();
-    await this.args.tasks.update();
+    if (this.newTaskDescription) {
+      const task = { description: this.newTaskDescription };
+      const newTask = await this.store.createRecord('task', task);
+      await newTask.save();
+      await this.args.tasks.update();
+    }
     this.clear();
   }
 
