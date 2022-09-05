@@ -1,7 +1,6 @@
 {{#if this.isShowAddInput}}
   <form>
-    <div class='mb-3'>
-      <label>Description</label>
+    <div class='new-task-input'>
       <input
         type='description'
         class='form-control'
@@ -11,15 +10,19 @@
         {{on 'input' this.onDescriptionChange}}
       />
     </div>
-    <button
-      type='submit'
-      class='btn btn-primary'
-      {{on 'click' this.addNewTask}}
-    >Submit</button>
-    <button
-      type='submit'
-      class='btn btn-danger'
-      {{on 'click' this.onCancel}}
-    >Cancel</button>
+    <div class='add-task-validation-buttons'>
+      <Shared::Button
+        type='submit'
+        class='btn btn-secondary'
+        @label='✔'
+        {{on 'click' this.addNewTask}}
+      />
+      <Shared::Button
+        type='submit'
+        class='btn btn-secondary'
+        @label='✖'
+        {{on 'click' this.onCancel}}
+      />
+    </div>
   </form>
 {{/if}}

@@ -1,9 +1,13 @@
 <MainContainer />
 <ToggleListContent @onStatusChange={{this.onStatusChange}} />
 <ShowTasks @tasks={{this.model}} />
-<button type='button' class='btn btn-info' {{on 'click' this.showAddInput}}>
-  Add new task
-</button>
+<Shared::Button
+  type='button'
+  class='btn btn-secondary add-task-button'
+  @label='Add new task'
+  {{on 'click' this.showAddInput}}
+/>
+
 <AddTask
   @isShowAddInput={{this.isShowAddInput}}
   @checkShowAddInput={{this.checkShowAddInput}}
