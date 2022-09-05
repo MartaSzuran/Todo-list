@@ -13,21 +13,12 @@ export default class HomePageController extends Controller {
   queryParams = ['status'];
 
   @action
-  onActiveChoose() {
-    this.status = 'active';
-    this.router.transitionTo('/', this.status);
-  }
-
-  @action
-  onCompletedChoose() {
-    this.status = 'completed';
-    this.router.transitionTo('/', this.status);
-  }
-
-  @action
-  onAllChoose() {
-    this.status = 'all';
-    this.router.transitionTo('/', this.status);
+  onStatusChange(status) {
+    if (status) {
+      this.status = status;
+      this.router.transitionTo('/', status);
+      return;
+    }
   }
 
   @action
