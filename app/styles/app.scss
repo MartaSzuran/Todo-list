@@ -1,3 +1,5 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 @import 'bootstrap';
 @import 'table';
 
@@ -34,25 +36,34 @@ body {
 
 .switches {
   display: inline-block;
-  margin-left: 50px;
-  margin-bottom: 20px;
+  margin: auto;
 }
 
 .new-task-input {
+  width: 100%;
+  margin: auto;
   text-align: center;
-  width: 90%;
-  display: inline;
+  padding-top: 15px;
 }
 
 .add-task-button {
-  margin: 15px 50px 15px 50px;
+  margin: auto;
+  display: block;
+
 }
 
 .add-task-validation-buttons {
-  margin: 15px 50px 15px 50px;
+  margin: auto;
+  display: block;
+  text-align: center;
+  padding-top: 15px;
 }
 
 .checked {
   text-decoration: line-through;
   text-decoration-color: #0b192e;
+}
+
+.ember-modal-dialog {
+  background-color: #57555a;
 }

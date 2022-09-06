@@ -4,3 +4,9 @@
   {{on 'click' this.onDelete}}
   @label='✖'
 />
+{{#if this.isShowModal}}
+  <ShowTasks::Details::DeleteButton::DeleteModalDialog
+    @currentTask={{@currentTask}}
+    @hideModal={{this.hideModal}}
+  />
+{{/if}}

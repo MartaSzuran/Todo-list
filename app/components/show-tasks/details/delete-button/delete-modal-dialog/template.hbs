@@ -1,0 +1,17 @@
+<ModalDialog @translucentOverlay={{true}} @onClickOverlay={{this.hideModal}}>
+  <h2 class='text-center'>Are you sure you want to delete this task?</h2>
+  <div class='modal-btns add-task-validation-buttons'>
+    <Shared::Button
+      type='button'
+      class='btn btn-secondary'
+      @label='✔'
+      {{on 'click' this.deleteTask}}
+    />
+    <Shared::Button
+      type='button'
+      class='btn btn-secondary'
+      @label='✖'
+      {{on 'click' this.hideModal}}
+    />
+  </div>
+</ModalDialog>
