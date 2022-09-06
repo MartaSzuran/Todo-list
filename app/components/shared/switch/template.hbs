@@ -5,6 +5,11 @@
     id='switch'
     {{on 'click' this.onClick}}
     ...attributes
+    data-test-switch-input
   />
-  <label class='form-check-label' for='switch'>{{@label}}</label>
+  <label
+    class='form-check-label'
+    for='switch'
+    data-test-switch-label
+  >{{@label}}</label>
 </div>

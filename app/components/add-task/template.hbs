@@ -8,6 +8,7 @@
         aria-describedby='description'
         value={{this.newTaskDescription}}
         {{on 'input' this.onDescriptionChange}}
+        data-test-description-input
       />
     </div>
     <div class='add-task-validation-buttons'>
@@ -16,12 +17,14 @@
         class='btn btn-secondary'
         @label='✔'
         {{on 'click' this.addNewTask}}
+        data-test-confirmation-button
       />
       <Shared::Button
         type='submit'
         class='btn btn-secondary'
         @label='✖'
         {{on 'click' this.onCancel}}
+        data-test-cancel-button
       />
     </div>
   </form>
