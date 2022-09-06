@@ -26,7 +26,7 @@
       <div class='input-group mt-0'>
         <input
           type='text'
-          class='form-control'
+          class={{check-if-is-done @currentTask.isDone}}
           aria-label='description'
           value={{@currentTask.description}}
           {{on 'input' this.onDescriptionChange}}
