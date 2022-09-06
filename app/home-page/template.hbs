@@ -1,15 +1,17 @@
-<MainContainer />
-<ToggleListContent @onStatusChange={{this.onStatusChange}} />
-<ShowTasks @tasks={{this.model}} />
-<Shared::Button
-  type='button'
-  class='btn btn-secondary add-task-button'
-  @label='Add new task'
-  {{on 'click' this.showAddInput}}
-/>
+<div class='main-container'>
+  <Navbar />
+  <ToggleListContent @onStatusChange={{this.onStatusChange}} />
+  <ShowTasks @tasks={{this.model}} />
+  <Shared::Button
+    type='button'
+    class='btn btn-secondary add-task-button'
+    @label='Add new task'
+    {{on 'click' this.showAddInput}}
+  />
 
-<AddTask
-  @isShowAddInput={{this.isShowAddInput}}
-  @checkShowAddInput={{this.checkShowAddInput}}
-  @tasks={{this.model}}
-/>
+  <AddTask
+    @isShowAddInput={{this.isShowAddInput}}
+    @checkShowAddInput={{this.checkShowAddInput}}
+    @tasks={{this.model}}
+  />
+</div>

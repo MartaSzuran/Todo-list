@@ -10,7 +10,7 @@ body {
 }
 
 .main-container {
-  width: 94%;
+  width: 70%;
   margin: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -21,7 +21,7 @@ body {
   margin: auto;
   margin-bottom: 20px;
   width: 24%;
-  font-size: 50px;
+  font-size: 40px;
   color: #818181;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', serif;
   -webkit-transition: color 1s;
@@ -39,16 +39,20 @@ body {
 }
 
 .new-task-input {
-  width: 92%;
-  margin: auto;
   text-align: center;
+  width: 90%;
+  display: inline;
 }
 
 .add-task-button {
-  min-width: fit-content;
   margin: 15px 50px 15px 50px;
 }
 
 .add-task-validation-buttons {
   margin: 15px 50px 15px 50px;
+}
+
+.checked {
+  text-decoration: line-through;
+  text-decoration-color: #0b192e;
 }
