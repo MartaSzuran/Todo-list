@@ -3,10 +3,13 @@
   class='btn btn-secondary'
   {{on 'click' this.onDelete}}
   @label='✖'
+  data-test-delete-button
 />
 {{#if this.isShowModal}}
-  <ShowTasks::Details::DeleteButton::DeleteModalDialog
-    @currentTask={{@currentTask}}
-    @hideModal={{this.hideModal}}
-  />
+  <span data-test-delete-modal>
+    <ShowTasks::Details::DeleteButton::DeleteModalDialog
+      @currentTask={{@currentTask}}
+      @hideModal={{this.hideModal}}
+    />
+  </span>
 {{/if}}

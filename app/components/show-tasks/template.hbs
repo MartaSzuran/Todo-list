@@ -1,7 +1,7 @@
 <table class='table'>
   <tbody>
-    {{#each @tasks as |task|}}
-      <tr>
+    {{#each @tasks as |task index|}}
+      <tr data-test-current-task={{index}}>
         <ShowTasks::Details @currentTask={{task}} />
       </tr>
     {{/each}}

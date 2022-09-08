@@ -10,6 +10,7 @@
             aria-label='Checkbox for following text input'
             {{on 'click' this.onIsDoneChange}}
             checked
+            data-test-checkbox-checked
           />
         </div>
       {{else}}
@@ -20,6 +21,7 @@
             value={{@currentTask.isDone}}
             aria-label='Checkbox for following text input'
             {{on 'click' this.onIsDoneChange}}
+            data-test-checkbox-notChecked
           />
         </div>
       {{/if}}
@@ -30,8 +32,11 @@
           aria-label='description'
           value={{@currentTask.description}}
           {{on 'input' this.onDescriptionChange}}
+          data-test-task-description
         />
-        <ShowTasks::Details::DeleteButton @currentTask={{@currentTask}} />
+        <span data-test-delete-button>
+          <ShowTasks::Details::DeleteButton @currentTask={{@currentTask}} />
+        </span>
       </div>
     </div>
   </form>

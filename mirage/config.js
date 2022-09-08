@@ -1,5 +1,5 @@
 export default function () {
-  this.get('/tasts');
+  this.get('/tasks');
   this.post('/tasks');
   this.get('/tasks/:id');
   this.put('/tasks/:id');
